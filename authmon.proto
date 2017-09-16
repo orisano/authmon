@@ -1,0 +1,24 @@
+syntax = "v3";
+
+package authmon;
+
+service Authmon {
+    rpc Register (RegisterRequest) returns (RegisterResponse) {}
+    rpc Authenticate (AuthNRequest) returns (AuthNResponse) {}
+    rpc Authorization (AuthZRequest) returns (AuthZResponse) {}
+}
+
+message RegisterRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message RegisterResponse {
+    string token = 1;
+}
+
+message AuthNRequest {}
+message AuthNResponse {}
+message AuthZRequest{}
+message AuthZResponse {}
+
